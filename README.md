@@ -1,180 +1,111 @@
-# MEGO Hotel Search Demo 🏨
+# MEGO Hotel Search Demo 🏨 (Ollama Local Miễn Phí)
 
-Demo ứng dụng tìm kiếm khách sạn bằng **Vector Database** — so sánh trực tiếp tìm kiếm ngữ nghĩa (Vector Search) với tìm theo từ khóa (SQL LIKE).
+Demo ứng dụng tìm kiếm khách sạn bằng **Vector Database** — so sánh trực tiếp tìm kiếm ngữ nghĩa (Vector Search) với tìm theo từ khóa (SQL LIKE), chạy hoàn toàn **Local miễn phí qua Ollama**, không phụ thuộc OpenAI API.
 
 ## Yêu cầu hệ thống
 
 | Thành phần | Phiên bản |
 |-----------|-----------|
-| Java | 17+ |
+| Java | 21 |
 | Node.js | 20+ |
 | npm | 9+ |
-| OpenAI API Key | Cần có |
+| Ollama | Phiên bản mới nhất trên Windows |
+| Model Embedding | `nomic-embed-text` |
 
-## Cấu trúc dự án
+## 1. Cài đặt và chuẩn bị Ollama trên Windows
 
-```
-Project-Vector-Database/
-├── backend/backend/         # Spring Boot 4.1.1 + Spring AI 2.0.1
-│   ├── src/main/java/iuh/fit/backend/
-│   │   ├── controller/      # REST API endpoints
-│   │   ├── service/         # Logic tìm kiếm
-│   │   ├── model/           # Record/DTO
-│   │   ├── config/          # VectorStore, CORS
-│   │   └── data/            # HotelDataLoader (embed + seed)
-│   └── src/main/resources/
-│       └── hotels.json      # 25 khách sạn dữ liệu seed
-└── frontend/                # Vite + React 19 + Tailwind + RTK Query
-```
+### Bước 1: Tải và cài đặt Ollama
+- Truy cập trang chủ: [https://ollama.com/download](https://ollama.com/download)
+- Tải file `OllamaSetup.exe` và tiến hành cài đặt.
+- Sau khi cài xong, Ollama sẽ chạy ngầm dưới khay hệ thống (System Tray).
 
-## Cách đặt biến môi trường
-
-### Windows (PowerShell)
+### Bước 2: Tải Embedding Model
+Mở PowerShell hoặc Command Prompt trên Windows và chạy lệnh:
 ```powershell
-$env:OPENAI_API_KEY = "sk-..."
+ollama pull nomic-embed-text
 ```
 
-### Windows (Command Prompt)
-```cmd
-set OPENAI_API_KEY=sk-...
-```
+*(Nếu sau này cần dùng thêm Chatbot cục bộ, bạn có thể tải thêm model: `ollama pull qwen2.5:3b`)*.
 
-### Linux/macOS
-```bash
-export OPENAI_API_KEY=sk-...
-```
-
-> **Lưu ý:** File `data/vector-store.json` được tạo tự động lần đầu chạy (tốn ~3-5s để embed 25 khách sạn). Các lần sau load từ file, không tốn chi phí API.
-
-## Cách chạy
-
-### 1. Backend
-
+### Bước 3: Kiểm tra Ollama hoạt động
+Chạy lệnh kiểm tra danh sách model đã tải:
 ```powershell
-# Windows
-cd backend\backend
-$env:OPENAI_API_KEY = "sk-..."
+ollama list
+```
+Kiểm tra endpoint API cục bộ (cổng 11434):
+```powershell
+curl http://localhost:11434/api/tags
+```
+
+---
+
+## 2. Cách chạy dự án
+
+### Backend (Spring Boot)
+1. Mở PowerShell tại thư mục `backend`:
+```powershell
+cd backend
 .\gradlew.bat bootRun
 ```
+*Lưu ý: Lần khởi động đầu tiên, `HotelDataLoader` sẽ gọi Ollama local để tạo vector embedding cho 25 khách sạn và lưu vào file `data/vector-store.json`. Các lần khởi động tiếp theo sẽ nạp trực tiếp từ file này nên khởi động cực nhanh và không tốn tài nguyên.*
 
-```bash
-# Linux/macOS
-cd backend/backend
-export OPENAI_API_KEY=sk-...
-./gradlew bootRun
-```
+- Backend API: http://localhost:8080  
+- Swagger UI tài liệu API: http://localhost:8080/swagger-ui.html
 
-Backend chạy tại: http://localhost:8080  
-Swagger UI: http://localhost:8080/swagger-ui.html
-
-### 2. Frontend
-
-```bash
+### Frontend (React + Vite + Tailwind)
+1. Mở một cửa sổ PowerShell khác tại thư mục `frontend`:
+```powershell
 cd frontend
-npm install   # Chỉ cần lần đầu
 npm run dev
 ```
+2. Mở trình duyệt truy cập: http://localhost:5173
 
-Frontend chạy tại: http://localhost:5173
+---
 
-## Chạy Tests (Backend)
+## 3. Chạy Unit Test Backend
 
 ```powershell
-# Windows
-cd backend\backend
+cd backend
 .\gradlew.bat test
 ```
+*(Tất cả 7 test cases bao gồm MockMvc, keyword search, semantic search, validation 400 & 404 đều pass 100%).*
 
-```bash
-# Linux/macOS
-cd backend/backend
-./gradlew test
-```
+---
 
-## Ví dụ gọi API bằng curl
+## 4. Ví dụ gọi API bằng curl
 
-### Lấy tất cả khách sạn
+### Lấy danh sách toàn bộ khách sạn
 ```bash
 curl http://localhost:8080/api/hotels
 ```
 
-### Tìm theo từ khóa (SQL LIKE)
+### Tìm kiếm theo từ khóa (SQL LIKE '%q%')
 ```bash
 curl "http://localhost:8080/api/hotels/search?q=rung+thong&mode=keyword&topK=5"
 ```
 
-### Tìm theo ngữ nghĩa (Vector Search)
+### Tìm kiếm theo ngữ nghĩa (Vector Search qua Ollama)
 ```bash
 curl "http://localhost:8080/api/hotels/search?q=cho+nghi+yen+tinh+giua+nui+rung+hop+cap+doi&mode=semantic&topK=5"
 ```
 
-### Tìm với lọc thành phố và giá
+### Tìm kiếm lai (Hybrid: Semantic + Lọc theo thành phố & giá)
 ```bash
 curl "http://localhost:8080/api/hotels/search?q=resort+gia+dinh&mode=semantic&city=Phu+Quoc&maxPrice=3000000"
 ```
 
-### Khách sạn tương tự
+### Tìm khách sạn tương tự
 ```bash
 curl "http://localhost:8080/api/hotels/H001/similar?topK=5"
 ```
 
-## 4 câu truy vấn demo
+---
 
-| # | Câu hỏi | Keyword | Vector |
-|---|---------|---------|--------|
-| 1 | "chỗ nghỉ yên tĩnh giữa núi rừng, hợp cặp đôi" | ❌ 0 kết quả | ✅ Đà Lạt |
-| 2 | "nơi cho cả nhà đi chơi, có hồ bơi cho trẻ em" | ❌ 0 kết quả | ✅ Resort gia đình |
-| 3 | "khách sạn sang trọng nhìn ra biển để tổ chức đám cưới" | ❌ 0 kết quả | ✅ Khách sạn biển cao cấp |
-| 4 | "ở gần sân bay, tiết kiệm cho người đi công tác" | ❌ 0 kết quả | ✅ Hotel gần sân bay giá rẻ |
+## 5. 4 câu truy vấn demo kiểm thử
 
-> Thiết kế dữ liệu cố tình dùng từ đồng nghĩa trong mô tả để keyword search bỏ sót nhưng vector search vẫn tìm đúng ngữ nghĩa.
+1. `chỗ nghỉ yên tĩnh giữa núi rừng, hợp cặp đôi`
+2. `nơi cho cả nhà đi chơi, có hồ bơi cho trẻ em`
+3. `khách sạn sang trọng nhìn ra biển để tổ chức đám cưới`
+4. `ở gần sân bay, tiết kiệm cho người đi công tác`
 
-## API Reference
-
-| Method | Endpoint | Mô tả |
-|--------|----------|-------|
-| GET | `/api/hotels` | Danh sách tất cả khách sạn |
-| GET | `/api/hotels/search?q=...&mode=keyword\|semantic` | Tìm kiếm |
-| GET | `/api/hotels/{id}/similar` | Khách sạn tương tự |
-
-### Tham số tìm kiếm
-
-| Tham số | Kiểu | Bắt buộc | Mô tả |
-|---------|------|----------|-------|
-| `q` | string | ✅ | Câu truy vấn |
-| `mode` | `keyword`\|`semantic` | - | Mặc định: `semantic` |
-| `topK` | int | - | Số kết quả (1-20, mặc định 5) |
-| `city` | string | - | Lọc theo thành phố |
-| `maxPrice` | long | - | Lọc giá tối đa (VND) |
-
-### Response Schema
-
-```json
-{
-  "mode": "semantic",
-  "tookMs": 120,
-  "results": [
-    {
-      "hotel": {
-        "id": "H001",
-        "name": "Pine Valley Resort",
-        "city": "Đà Lạt",
-        "price": 1200000,
-        "stars": 4,
-        "description": "...",
-        "amenities": ["lò sưởi", "ban công riêng"]
-      },
-      "score": 0.87
-    }
-  ]
-}
-```
-
-> `score` chỉ có giá trị ở mode `semantic` (cosine similarity 0-1). Với `keyword`, `score` = `null`.
-
-## Tech Stack
-
-- **Backend:** Spring Boot 4.1.1, Spring AI 2.0.1, OpenAI `text-embedding-3-small`, SimpleVectorStore (in-memory)
-- **Frontend:** Vite 8.3, React 19, TypeScript 6, Tailwind CSS 4, Redux Toolkit, RTK Query
-- **Embedding:** OpenAI `text-embedding-3-small` — mô hình đa ngôn ngữ, hỗ trợ tiếng Việt
-"# Vector-Database" 
+> Cả 4 câu truy vấn trên khi tìm ở cột **Từ khóa** sẽ trả về 0 kết quả (do mô tả khách sạn dùng từ đồng nghĩa, tránh từ khóa trực tiếp). Ngược lại, cột **Ngữ nghĩa (Ollama)** sẽ tìm ra chính xác các khách sạn phù hợp nhất.

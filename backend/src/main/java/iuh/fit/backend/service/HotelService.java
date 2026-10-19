@@ -67,21 +67,27 @@ public class HotelService {
     public SearchResponse semanticSearch(String query, int topK, String city, Long maxPrice) {
         long startTime = System.currentTimeMillis();
 
-        // Xây dựng SearchRequest kết hợp FilterExpression lọc metadata
-        SearchRequest searchRequest = buildSemanticRequest(query, topK, city, maxPrice);
+        List<SearchResult> results = new ArrayList<>();
+        try {
+            // Xây dựng SearchRequest kết hợp FilterExpression lọc metadata
+            SearchRequest searchRequest = buildSemanticRequest(query, topK, city, maxPrice);
 
-        // Gọi similaritySearch thực thụ trên VectorStore
-        List<Document> matchedDocuments = vectorStore.similaritySearch(searchRequest);
+            // Gọi similaritySearch thực thụ trên VectorStore
+            List<Document> matchedDocuments = vectorStore.similaritySearch(searchRequest);
 
-        List<SearchResult> results = matchedDocuments.stream()
-                .map(doc -> {
-                    String hotelId = (String) doc.getMetadata().get("hotelId");
-                    Optional<Hotel> hotelOpt = findHotelById(hotelId);
-                    Double score = extractScore(doc);
-                    return hotelOpt.map(h -> new SearchResult(h, score)).orElse(null);
-                })
-                .filter(r -> r != null)
-                .toList();
+            results = matchedDocuments.stream()
+                    .map(doc -> {
+                        String hotelId = (String) doc.getMetadata().get("hotelId");
+                        Optional<Hotel> hotelOpt = findHotelById(hotelId);
+                        Double score = extractScore(doc);
+                        return hotelOpt.map(h -> new SearchResult(h, score)).orElse(null);
+                    })
+                    .filter(r -> r != null)
+                    .toList();
+        } catch (Exception ex) {
+            log.error("Lỗi khi tìm kiếm ngữ nghĩa với Ollama (có thể chưa bật Ollama): {}", ex.getMessage());
+            // Trả về danh sách rỗng thay vì làm sập API và văng lỗi 500
+        }
 
         long tookMs = System.currentTimeMillis() - startTime;
         log.debug("Semantic search '{}' trả về {} kết quả trong {} ms", query, results.size(), tookMs);
