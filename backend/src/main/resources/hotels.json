@@ -1,0 +1,227 @@
+[
+  {
+    "id": "H001",
+    "name": "Pine Valley Resort",
+    "city": "Đà Lạt",
+    "price": 1200000,
+    "stars": 4,
+    "description": "Không gian thanh bình, bao quanh bởi rừng thông xanh mát trên cao nguyên. Từng căn phòng được thiết kế theo phong cách đồng quê Pháp, mang lại cảm giác ấm cúng và thư thái cho hai người. Buổi sáng tỉnh dậy với tiếng chim hót và sương mù nhẹ bao phủ thung lũng bên dưới.",
+    "amenities": ["lò sưởi", "ban công riêng", "bồn tắm", "view rừng thông", "bữa sáng đôi"]
+  },
+  {
+    "id": "H002",
+    "name": "Đà Lạt Mộng Mơ Inn",
+    "city": "Đà Lạt",
+    "price": 650000,
+    "stars": 3,
+    "description": "Nhà nghỉ nhỏ xinh nằm giữa vườn hoa đủ sắc, tĩnh lặng như tranh vẽ. Chủ nhà người địa phương nấu bữa sáng tự làm mỗi ngày với bánh mì và café phin nóng hổi. Lý tưởng cho những ai muốn trốn khỏi phố thị, tìm về với thiên nhiên núi rừng.",
+    "amenities": ["bữa sáng", "vườn hoa", "wifi", "xe đạp mượn"]
+  },
+  {
+    "id": "H003",
+    "name": "Langbiang Mountain Lodge",
+    "city": "Đà Lạt",
+    "price": 2800000,
+    "stars": 5,
+    "description": "Khu nghỉ dưỡng cao cấp tọa lạc trên sườn núi Langbiang, bao quanh bởi thiên nhiên hoang sơ và không khí trong lành mát mẻ. Không gian riêng tư tuyệt đối với villa độc lập, thích hợp để hai người tận hưởng khoảnh khắc lãng mạn giữa núi rừng Tây Nguyên. Nhà hàng phục vụ các món ăn địa phương đặc sắc kết hợp ẩm thực Pháp tinh tế.",
+    "amenities": ["villa riêng", "lò sưởi", "bồn tắm ngoài trời", "nhà hàng fine-dining", "spa", "view núi"]
+  },
+  {
+    "id": "H004",
+    "name": "Da Lat Flower Boutique",
+    "city": "Đà Lạt",
+    "price": 480000,
+    "stars": 2,
+    "description": "Khách sạn nhỏ gọn với phong cách boutique ấm cúng, nằm trong khu dân cư hoa hồng nổi tiếng. Giá phòng hợp lý, phù hợp với du khách đi một mình hoặc theo cặp muốn khám phá Đà Lạt tiết kiệm. Cách chợ đêm Đà Lạt chỉ 5 phút đi bộ.",
+    "amenities": ["wifi", "nước nóng", "gần chợ đêm"]
+  },
+  {
+    "id": "H005",
+    "name": "Misty Forest Retreat",
+    "city": "Đà Lạt",
+    "price": 1800000,
+    "stars": 4,
+    "description": "Ẩn mình trong khu rừng thông nguyên sinh, khu nghỉ dưỡng này mang lại cảm giác tách biệt hoàn toàn khỏi thế giới ồn ào. Từng chòi nghỉ gỗ được xây dựng trên cao, giữa tán thông rì rào, lý tưởng cho những cuộc hẹn hò lãng mạn. Dịch vụ yoga buổi sáng và tắm suối khoáng giữa rừng.",
+    "amenities": ["chòi gỗ", "suối khoáng", "yoga", "view rừng", "lối đi bộ rừng"]
+  },
+  {
+    "id": "H006",
+    "name": "Vũng Tàu Beach Palace",
+    "city": "Vũng Tàu",
+    "price": 3500000,
+    "stars": 5,
+    "description": "Tọa lạc ngay trên mặt tiền Bãi Sau, khách sạn có tầm nhìn toàn cảnh đại dương từ mọi phòng. Sảnh tiệc rộng lớn với sức chứa 500 khách, thường xuyên là địa điểm tổ chức các buổi lễ trọng đại và tiệc gala. Hồ bơi vô cực tràn nước trước biển tạo nên khung cảnh tuyệt đẹp.",
+    "amenities": ["hồ bơi vô cực", "sảnh tiệc", "spa", "nhà hàng hải sản", "bãi biển riêng", "bar tầng thượng"]
+  },
+  {
+    "id": "H007",
+    "name": "Sunrise Family Resort Vũng Tàu",
+    "city": "Vũng Tàu",
+    "price": 2200000,
+    "stars": 4,
+    "description": "Khu nghỉ dưỡng gia đình rộng lớn với khu vui chơi dưới nước cho bé gồm cầu trượt và bể nông. Phụ huynh có thể thư giãn hoàn toàn trong khi con cái vui đùa dưới sự giám sát của nhân viên được đào tạo. Nhà hàng buffet sáng phục vụ hơn 50 món ăn đa dạng phù hợp cả trẻ nhỏ lẫn người lớn.",
+    "amenities": ["khu nước cho bé", "cầu trượt", "buffet sáng", "khu giữ trẻ", "sân chơi ngoài trời", "wifi"]
+  },
+  {
+    "id": "H008",
+    "name": "Front De Mer Hotel",
+    "city": "Vũng Tàu",
+    "price": 900000,
+    "stars": 3,
+    "description": "Khách sạn 3 sao nằm ngay Bãi Trước, cách biển chỉ 2 phút đi bộ, giá cả phải chăng. Phòng ốc sạch sẽ thoáng mát, thích hợp cho gia đình hoặc nhóm bạn đi biển ngắn ngày. Lễ tân phục vụ 24/7 và có bãi giữ xe rộng rãi miễn phí.",
+    "amenities": ["wifi", "điều hòa", "gần biển", "bãi giữ xe", "lễ tân 24/7"]
+  },
+  {
+    "id": "H009",
+    "name": "Cap Saint-Jacques Boutique",
+    "city": "Vũng Tàu",
+    "price": 1600000,
+    "stars": 4,
+    "description": "Khách sạn boutique phong cách Đông Dương hoài cổ, nằm trên đỉnh đồi nhìn xuống Vịnh Gành Rái thơ mộng. Không gian riêng tư lý tưởng cho những đôi tình nhân muốn trải nghiệm du lịch chậm. Bar rượu vang và nhà hàng seafood phục vụ đến tận nửa đêm.",
+    "amenities": ["view vịnh", "bar rượu vang", "nhà hàng seafood", "hồ bơi", "wifi"]
+  },
+  {
+    "id": "H010",
+    "name": "Pearl Island Grand Resort",
+    "city": "Phú Quốc",
+    "price": 4500000,
+    "stars": 5,
+    "description": "Thiên đường nghỉ dưỡng đẳng cấp quốc tế trên đảo Phú Quốc với tầm nhìn toàn cảnh đại dương tuyệt mãn. Sảnh tiệc ngoài trời ngay trên bãi cát trắng có thể tổ chức lễ kỷ niệm, ra mắt sản phẩm hoặc các buổi tiệc tùng đặc biệt cho đến 300 người. Bungalow trên mặt nước với lối đi riêng xuống biển là trải nghiệm độc đáo không thể quên.",
+    "amenities": ["bungalow trên nước", "sảnh tiệc ngoài trời", "lặn biển", "spa", "bãi biển riêng", "nhà hàng 5 sao"]
+  },
+  {
+    "id": "H011",
+    "name": "Phu Quoc Family Fun Village",
+    "city": "Phú Quốc",
+    "price": 2800000,
+    "stars": 4,
+    "description": "Khu làng nghỉ dưỡng chuyên phục vụ gia đình với khu vui chơi dưới nước riêng dành cho trẻ em gồm bể nông, cầu trượt màu sắc và phòng bơm hơi. Chương trình hoạt động hàng ngày từ câu cá, học làm bánh đến kể chuyện thiên nhiên, giúp các bé luôn vui vẻ. Ba nhà hàng phục vụ đa dạng từ hải sản tươi sống đến món Việt Nam thuần túy.",
+    "amenities": ["bể nông cho bé", "cầu trượt", "câu cá", "3 nhà hàng", "xe điện nội khu", "mini club"]
+  },
+  {
+    "id": "H012",
+    "name": "Blue Coral Phu Quoc",
+    "city": "Phú Quốc",
+    "price": 1400000,
+    "stars": 3,
+    "description": "Khách sạn ven biển thoáng đãng với view nhìn thẳng ra biển Tây trong xanh mênh mông. Phòng thiết kế hiện đại sáng sủa, thích hợp cho cặp đôi muốn trải nghiệm đảo ngọc Phú Quốc. Nhân viên nhiệt tình hỗ trợ đặt tour lặn san hô và câu mực đêm.",
+    "amenities": ["view biển", "hồ bơi", "tour lặn biển", "wifi", "bữa sáng"]
+  },
+  {
+    "id": "H013",
+    "name": "Phu Quoc Budget Stay",
+    "city": "Phú Quốc",
+    "price": 350000,
+    "stars": 2,
+    "description": "Nhà nghỉ nhỏ xinh gần trung tâm thị trấn Dương Đông, giá phòng rất phải chăng phù hợp phượt thủ. Chủ nhà thân thiện, sẵn lòng gợi ý những quán ăn ngon và địa điểm tắm biển ít người biết. Đặt trước 3 ngày để đảm bảo phòng trong mùa cao điểm.",
+    "amenities": ["wifi", "quạt", "nhà bếp chung", "xe máy thuê"]
+  },
+  {
+    "id": "H014",
+    "name": "Ocean Star Nha Trang",
+    "city": "Nha Trang",
+    "price": 3800000,
+    "stars": 5,
+    "description": "Khách sạn biển thượng hạng với tầm nhìn toàn cảnh Vịnh Nha Trang từ tầng 30 trở lên, là biểu tượng du lịch sang trọng của thành phố biển. Sảnh tiệc đỉnh cao có thể tổ chức lễ kỷ niệm và các buổi lễ trọng đại với không gian hướng biển lãng mạn. Phòng suite cao cấp trang bị bồn tắm panoramic và rượu Champagne chào đón.",
+    "amenities": ["view vịnh", "sảnh tiệc biển", "spa", "hồ bơi ngoài trời", "nhà hàng roof-top", "butler service"]
+  },
+  {
+    "id": "H015",
+    "name": "Nha Trang Kids Paradise",
+    "city": "Nha Trang",
+    "price": 1900000,
+    "stars": 4,
+    "description": "Thiên đường vui chơi cho gia đình với khu nước ngoài trời gồm cầu trượt khổng lồ, bể sóng nhân tạo và khu nước nông dành riêng cho trẻ nhỏ dưới 5 tuổi. Club trẻ em mở cả ngày với giáo viên trông trẻ chuyên nghiệp để bố mẹ thoải mái nghỉ ngơi. Chỉ cách Vinpearl Land 5 phút đi xe.",
+    "amenities": ["bể sóng", "cầu trượt lớn", "khu nước nông", "club trẻ em", "buffet gia đình", "bãi biển riêng"]
+  },
+  {
+    "id": "H016",
+    "name": "Sailing Club Nha Trang",
+    "city": "Nha Trang",
+    "price": 2100000,
+    "stars": 4,
+    "description": "Khu nghỉ dưỡng bờ biển với phong cách Mediterranean, nhìn thẳng ra Vịnh Nha Trang xanh biếc. Là địa điểm nổi tiếng tổ chức các buổi lễ kết đôi ngoài trời trên bãi cát trắng cùng dịch vụ decor chuyên nghiệp. Nhà hàng và bar ven biển phục vụ đến 2 giờ sáng.",
+    "amenities": ["bãi biển riêng", "tiệc ngoài trời", "bar ven biển", "hồ bơi", "gym", "wifi"]
+  },
+  {
+    "id": "H017",
+    "name": "Nha Trang Transit Inn",
+    "city": "Nha Trang",
+    "price": 420000,
+    "stars": 2,
+    "description": "Nhà nghỉ gọn nhẹ nằm ngay trung tâm thành phố, vị trí thuận tiện di chuyển đến ga tàu và bến xe. Phòng sạch sẽ trang bị đủ tiện nghi cơ bản, phù hợp cho khách đi qua hoặc dừng chân làm việc ngắn ngày. Check-in linh hoạt mọi giờ trong ngày.",
+    "amenities": ["wifi", "điều hòa", "giữ hành lý", "đặt vé phương tiện"]
+  },
+  {
+    "id": "H018",
+    "name": "Nội Bài Executive Suites",
+    "city": "Hà Nội",
+    "price": 1100000,
+    "stars": 4,
+    "description": "Khách sạn doanh nhân cách phi trường chỉ 3 phút đi xe, vị trí thuận tiện di chuyển tối đa cho người hay bay. Dịch vụ đưa đón tận cổng 24/7 và phòng họp đầy đủ trang thiết bị cho các buổi làm việc nhóm. Giá phòng được thiết kế cho khách công vụ cần nghỉ ngơi nhanh gọn giữa các chuyến đi.",
+    "amenities": ["xe đưa đón", "phòng họp", "wifi tốc độ cao", "bữa sáng", "giặt ủi nhanh", "dịch vụ in ấn"]
+  },
+  {
+    "id": "H019",
+    "name": "Hoan Kiem Heritage Hotel",
+    "city": "Hà Nội",
+    "price": 1800000,
+    "stars": 4,
+    "description": "Khách sạn di sản nằm trong khu phố cổ 36 phố phường Hà Nội, tòa nhà trăm tuổi được phục chế tinh tế. Mỗi phòng kể một câu chuyện lịch sử, phù hợp cho những du khách muốn trải nghiệm văn hóa Hà Nội đích thực. Cà phê tầng thượng nhìn ra Hồ Hoàn Kiếm lung linh về đêm.",
+    "amenities": ["view Hồ Hoàn Kiếm", "cà phê sân thượng", "wifi", "tour phố cổ", "bữa sáng Hà Nội"]
+  },
+  {
+    "id": "H020",
+    "name": "Hanoi Airport Budget Hotel",
+    "city": "Hà Nội",
+    "price": 380000,
+    "stars": 2,
+    "description": "Nhà nghỉ bình dân cách phi trường 2km, vị trí cực kỳ thuận tiện cho chuyến bay sớm hoặc muộn. Chi phí lưu trú thấp hợp lý, phù hợp với người đi làm việc xa muốn không tốn kém khi cần nghỉ ngắn. Xe đưa đón miễn phí theo yêu cầu.",
+    "amenities": ["xe đưa đón", "wifi", "điều hòa", "tủ đồ", "24h check-in"]
+  },
+  {
+    "id": "H021",
+    "name": "Lotte Grand Hanoi",
+    "city": "Hà Nội",
+    "price": 4200000,
+    "stars": 5,
+    "description": "Khách sạn hàng đầu Hà Nội tọa lạc tại trung tâm thương mại, sảnh tiệc đẳng cấp quốc tế sức chứa 1000 khách thường là nơi diễn ra hội nghị quốc tế và lễ kỷ niệm doanh nghiệp lớn. Tầm nhìn panorama từ tầng 65 ôm trọn toàn cảnh thủ đô Hà Nội. Butler service cá nhân phục vụ 24/7 cho khách phòng suite.",
+    "amenities": ["sảnh tiệc lớn", "hội nghị quốc tế", "view panorama", "spa", "bể bơi trong nhà", "butler service"]
+  },
+  {
+    "id": "H022",
+    "name": "Saigon Transit Hotel",
+    "city": "TP.HCM",
+    "price": 750000,
+    "stars": 3,
+    "description": "Khách sạn nằm ngay cổng phi trường Tân Sơn Nhất, vị trí thuận tiện di chuyển lý tưởng cho người hay di chuyển bằng máy bay. Mức chi phí kinh tế hợp lý, phù hợp với người đi làm việc tỉnh muốn giảm thiểu chi phí lưu trú giữa các chuyến bay nội địa và quốc tế. Dịch vụ đưa đón cả ngày lẫn đêm.",
+    "amenities": ["xe đưa đón", "wifi", "phòng họp nhỏ", "bữa sáng", "giặt ủi", "24h check-in"]
+  },
+  {
+    "id": "H023",
+    "name": "The Grand Riverside HCMC",
+    "city": "TP.HCM",
+    "price": 3200000,
+    "stars": 5,
+    "description": "Khách sạn biểu tượng bên sông Sài Gòn với thiết kế kiến trúc đương đại ấn tượng, sảnh tiệc lộng lẫy bậc nhất thành phố thường được chọn cho các lễ kỷ niệm và hội nghị quốc tế cao cấp. Nhà hàng tầng thượng phục vụ ẩm thực fusion và cocktail với tầm nhìn toàn cảnh thành phố về đêm lung linh. Hồ bơi tràn bờ ngoài trời là điểm ngắm cảnh tuyệt đẹp.",
+    "amenities": ["hồ bơi tràn", "sảnh tiệc cao cấp", "nhà hàng rooftop", "spa", "phòng gym", "butler service"]
+  },
+  {
+    "id": "H024",
+    "name": "Bui Vien Backpacker Hub",
+    "city": "TP.HCM",
+    "price": 180000,
+    "stars": 1,
+    "description": "Hostel vui nhộn ngay phố Tây Bùi Viện, nơi gặp gỡ của các khách du lịch trẻ từ khắp thế giới. Giá thuê phòng cực kỳ vừa túi tiền với dormitory 6-8 giường, phòng chung sạch sẽ và an toàn. Bar trên sân thượng mở đến 3 giờ sáng, tổ chức giao lưu mỗi cuối tuần.",
+    "amenities": ["dormitory", "bar sân thượng", "wifi", "tủ khóa", "bếp chung", "tour thành phố"]
+  },
+  {
+    "id": "H025",
+    "name": "Tan Son Nhat Business Inn",
+    "city": "TP.HCM",
+    "price": 550000,
+    "stars": 3,
+    "description": "Khách sạn doanh nhân 3 sao cách phi trường 5 phút lái xe, là lựa chọn thực dụng và kinh tế cho người đi làm việc xa thường xuyên. Dịch vụ cho thuê xe và tư vấn lịch trình làm việc tại TP.HCM giúp tối ưu hóa chuyến đi. Phòng rộng thoáng mát, có bàn làm việc lớn và đèn đọc sách tiện lợi.",
+    "amenities": ["bàn làm việc", "wifi tốc độ cao", "thuê xe", "phòng họp", "giặt ủi"]
+  }
+]
